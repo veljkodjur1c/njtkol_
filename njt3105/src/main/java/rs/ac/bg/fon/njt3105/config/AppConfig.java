@@ -22,12 +22,12 @@ import rs.ac.bg.fon.njt3105.service.impl.BookServiceImpl;
  *
  * @author natal
  */
-@ComponentScan(basePackages = "rs.ac.bg.fon.njt3105")
+@ComponentScan(basePackages = "rs.ac.bg.fon.njt3105")    //ovo
 public class AppConfig {
 
     @Bean(value = "jakarta.persistence.EntityManagerFactory")
     public EntityManagerFactory getEmf() {
-        return Persistence.createEntityManagerFactory("rs.ac.bg.fon_njt3105_jar_1.0-SNAPSHOTPU");
+        return Persistence.createEntityManagerFactory("rs.ac.bg.fon_njt3105_jar_1.0-SNAPSHOTPU");    //ovo kao persistance unit u .xml
     }
 
     @Bean(value = "org.hibernate.SessionFactory")
@@ -35,13 +35,13 @@ public class AppConfig {
         return new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
     }
 
-    @Bean(value="JpaBookService")
+    @Bean(value="JpaBookService")    //ovo nece biti Book nego nesto
     public BookService getJpaBookService(
             @Qualifier("jpa-repository") BookRepository repo,
             Converter<BookDto, Book> converter) {
         return new BookServiceImpl(repo, converter);
     }
-    @Bean(value="HibernateBookService")
+    @Bean(value="HibernateBookService")    //ovo nece biti Book nego nesto
     public BookService getHibernateBookService(
             @Qualifier("hibernate-repository") BookRepository repo,
             Converter<BookDto, Book> converter) {
