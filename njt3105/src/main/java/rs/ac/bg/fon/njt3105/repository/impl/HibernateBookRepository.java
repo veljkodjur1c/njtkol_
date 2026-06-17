@@ -17,7 +17,7 @@ import rs.ac.bg.fon.njt3105.repository.BookRepository;
  *
  * @author natal
  */
-@Repository(value = "hibernate-repository")
+@Repository(value = "hibernate-repository") //ovo se poklapa sa @qualifier
 public class HibernateBookRepository implements BookRepository {
 
     private final SessionFactory sf;
