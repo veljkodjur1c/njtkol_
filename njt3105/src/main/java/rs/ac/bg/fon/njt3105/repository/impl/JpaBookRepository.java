@@ -16,7 +16,7 @@ import rs.ac.bg.fon.njt3105.repository.BookRepository;
  *
  * @author natal
  */
-@Repository(value = "jpa-repository")
+@Repository(value = "jpa-repository")    //ovo se poklapa sa @qualifier
 public class JpaBookRepository implements BookRepository {
 
     private final EntityManagerFactory emf;
